@@ -3,8 +3,8 @@ import {
   ProjectDescriptionInput,
   ProjectDescriptionResponse,
   AIServiceInterface,
-} from '@/interfaces/ai.interface.js';
-import { AIFactory } from '@/services/ai/ai.factory.js';
+} from '../interfaces/ai.interface.js';
+import { AIFactory } from './ai/ai.factory.js';
 
 // All providers supported for simple text generation
 const SUPPORTED_PROVIDERS: AIProvider[] = [

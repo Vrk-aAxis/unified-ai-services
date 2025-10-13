@@ -1,6 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
 
-import { AIServiceInterface } from '@/interfaces/ai.interface.js';
+import { AIServiceInterface } from '../../interfaces/ai.interface.js';
 
 export class GeminiService implements AIServiceInterface {
   private client: GoogleGenAI;

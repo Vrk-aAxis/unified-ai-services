@@ -3,9 +3,9 @@ import { config } from 'dotenv';
 import express, { Request, Response, NextFunction } from 'express';
 import helmet from 'helmet';
 
-import { errorHandler } from '@/middleware/errorHandler.js';
-import apiRouter from '@/routes/api.js';
-import { logger } from '@/utils/logger.js';
+import { errorHandler } from './middleware/errorHandler.js';
+import apiRouter from './routes/api.js';
+import { logger } from './utils/logger.js';
 
 // Load environment variables
 config();

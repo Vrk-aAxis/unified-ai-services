@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import { healthController } from '@/controllers/health.Controller.js';
-import aiRouter from '@/routes/ai.routes.js';
+import { healthController } from '../controllers/health.Controller.js';
+import aiRouter from './ai.routes.js';
 
 const router = Router();
 

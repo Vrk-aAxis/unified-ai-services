@@ -1,4 +1,4 @@
-import { AIServiceInterface } from '@/interfaces/ai.interface.js';
+import { AIServiceInterface } from '../../interfaces/ai.interface.js';
 
 interface GroqMessage {
   role: string;

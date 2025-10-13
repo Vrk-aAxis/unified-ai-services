@@ -5,12 +5,12 @@ import {
   GenerateResponse,
   ProductInput,
   ProjectDescriptionInput,
-} from '@/interfaces/ai.interface.js';
-import { ApiError } from '@/middleware/errorHandler.js';
-import { AIFactory } from '@/services/ai/ai.factory.js';
-import { PRDGeneratorService } from '@/services/prd-generator.service.js';
-import { ProjectDescriptionGeneratorService } from '@/services/project-description-generator.service.js';
-import { logger } from '@/utils/logger.js';
+} from '../interfaces/ai.interface.js';
+import { ApiError } from '../middleware/errorHandler.js';
+import { AIFactory } from '../services/ai/ai.factory.js';
+import { PRDGeneratorService } from '../services/prd-generator.service.js';
+import { ProjectDescriptionGeneratorService } from '../services/project-description-generator.service.js';
+import { logger } from '../utils/logger.js';
 
 export const generatePRD = async (
   req: Request,

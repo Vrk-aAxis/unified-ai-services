@@ -1,4 +1,4 @@
-import { PRD_RESPONSE_SCHEMA } from '@/schemas/prd.schema.js';
+import { PRD_RESPONSE_SCHEMA } from '../schemas/prd.schema.js';
 
 export const PRD_SYSTEM_PROMPT = `You are an expert Product Requirements Document (PRD) generator. 
 

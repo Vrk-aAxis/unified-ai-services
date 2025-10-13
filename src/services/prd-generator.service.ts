@@ -3,10 +3,10 @@ import {
   ProductInput,
   PRDData,
   AIServiceInterface,
-} from '@/interfaces/ai.interface.js';
-import { PRD_RESPONSE_SCHEMA } from '@/schemas/prd.schema.js';
-import { formatPRDPrompt } from '@/prompts/prd.prompt.js';
-import { AIFactory } from '@/services/ai/ai.factory.js';
+} from '../interfaces/ai.interface.js';
+import { PRD_RESPONSE_SCHEMA } from '../schemas/prd.schema.js';
+import { formatPRDPrompt } from '../prompts/prd.prompt.js';
+import { AIFactory } from './ai/ai.factory.js';
 
 // Supported providers for PRD generation
 const SUPPORTED_PRD_PROVIDERS: AIProvider[] = [

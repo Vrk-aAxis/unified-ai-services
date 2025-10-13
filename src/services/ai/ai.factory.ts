@@ -1,4 +1,7 @@
-import { AIProvider, AIServiceInterface } from '@/interfaces/ai.interface.js';
+import {
+  AIProvider,
+  AIServiceInterface,
+} from '../../interfaces/ai.interface.js';
 
 import { GeminiService } from './gemini.service.js';
 import { GroqService } from './groq.service.js';
