@@ -1,4 +1,4 @@
-# Generative AI Services
+# Unified AI Services
 
 Modern Node.js + TypeScript backend with ESModules support for AI document generation.
 
