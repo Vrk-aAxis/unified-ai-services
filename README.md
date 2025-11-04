@@ -2,6 +2,12 @@
 
 Modern Node.js + TypeScript backend with ESModules support for AI document generation.
 
+## 📚 Documentation
+
+**📖 [View API Documentation](https://vrk-aaxis.github.io/unified-ai-services/index.html)**
+
+Complete API documentation with endpoints, examples, and integration guides available at the link above.
+
 ## 🚀 Features
 
 - ✅ Node.js 18+ with TypeScript
