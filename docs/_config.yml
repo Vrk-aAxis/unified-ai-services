@@ -1,0 +1,32 @@
+# Jekyll configuration for GitHub Pages
+title: Generative AI Services API Documentation
+description: Complete API documentation for Generative AI Services
+baseurl: '' # Set to your repository name if using project site, e.g., "/repository-name"
+url: '' # Your GitHub Pages URL, e.g., "https://yourusername.github.io"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /index.html
+  - title: Getting Started
+    url: /getting-started.html
+  - title: API Endpoints
+    url: /endpoints.html
+  - title: Authentication
+    url: /authentication.html
+  - title: Error Handling
+    url: /error-handling.html
+  - title: Examples
+    url: /examples.html
+
+# GitHub Pages settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md

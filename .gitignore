@@ -38,3 +38,6 @@ coverage/
 *.tsbuildinfo
 .eslintcache
 
+# Jekyll
+docs/_site/
+.sass-cache/
