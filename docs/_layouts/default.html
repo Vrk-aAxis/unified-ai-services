@@ -195,81 +195,43 @@
       <aside class="sidebar">
         <h2>Documentation</h2>
         <nav>
-          <ul>
-            <li>
-              <a
-                href="{{ site.baseurl }}/index.html"
-                {%
-                if
-                page.url=""
-                ="/"
-                or
-                page.url=""
-                ="/index.html"
-                %}class="active"
-                {%
-                endif
-                %}
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                href="{{ site.baseurl }}/getting-started.html"
-                {%
-                if
-                page.url=""
-                ="/getting-started.html"
-                %}class="active"
-                {%
-                endif
-                %}
-                >Getting Started</a
-              >
-            </li>
-            <li>
-              <a
-                href="{{ site.baseurl }}/endpoints.html"
-                {%
-                if
-                page.url=""
-                ="/endpoints.html"
-                %}class="active"
-                {%
-                endif
-                %}
-                >API Endpoints</a
-              >
-            </li>
-            <li>
-              <a
-                href="{{ site.baseurl }}/authentication.html"
-                {%
-                if
-                page.url=""
-                ="/authentication.html"
-                %}class="active"
-                {%
-                endif
-                %}
-                >Authentication</a
-              >
-            </li>
-            <li>
-              <a
-                href="{{ site.baseurl }}/error-handling.html"
-                {%
-                if
-                page.url=""
-                ="/error-handling.html"
-                %}class="active"
-                {%
-                endif
-                %}
-                >Error Handling</a
-              >
-            </li>
-          </ul>
+           <ul>
+             <li>
+               <a
+                 href="{{ site.baseurl }}/index.html"
+                 {% if page.url == '/' or page.url == '/index.html' %}class="active"{% endif %}
+                 >Home</a
+               >
+             </li>
+             <li>
+               <a
+                 href="{{ site.baseurl }}/getting-started.html"
+                 {% if page.url == '/getting-started.html' %}class="active"{% endif %}
+                 >Getting Started</a
+               >
+             </li>
+             <li>
+               <a
+                 href="{{ site.baseurl }}/endpoints.html"
+                 {% if page.url == '/endpoints.html' %}class="active"{% endif %}
+                 >API Endpoints</a
+               >
+             </li>
+             <li>
+               <a
+                 href="{{ site.baseurl }}/authentication.html"
+                 {% if page.url == '/authentication.html' %}class="active"{% endif %}
+                 >Authentication</a
+               >
+             </li>
+             <li>
+               <a
+                 href="{{ site.baseurl }}/error-handling.html"
+                 {% if page.url == '/error-handling.html' %}class="active"{% endif %}
+                 >Error Handling</a
+               >
+             </li>
+           </ul>
         </nav>
       </aside>
 
