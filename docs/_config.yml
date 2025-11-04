@@ -1,8 +1,8 @@
 # Jekyll configuration for GitHub Pages
 title: Generative AI Services API Documentation
 description: Complete API documentation for Generative AI Services
-baseurl: '' # Set to your repository name if using project site, e.g., "/repository-name"
-url: '' # Your GitHub Pages URL, e.g., "https://yourusername.github.io"
+baseurl: '/unified-ai-services' # Leave empty if repository is username.github.io, otherwise use "/repository-name"
+url: 'https://vrk-aaxis.github.io' # Replace with your actual GitHub Pages URL
 
 # Navigation
 navigation:
