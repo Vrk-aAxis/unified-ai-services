@@ -5,11 +5,13 @@ import {
   GenerateResponse,
   ProductInput,
   ProjectDescriptionInput,
+  TaskDescriptionInput,
 } from '../interfaces/ai.interface.js';
 import { ApiError } from '../middleware/errorHandler.js';
 import { AIFactory } from '../services/ai/ai.factory.js';
 import { PRDGeneratorService } from '../services/prd-generator.service.js';
 import { ProjectDescriptionGeneratorService } from '../services/project-description-generator.service.js';
+import { TaskDescriptionGeneratorService } from '../services/task-description-generator.service.js';
 import { logger } from '../utils/logger.js';
 
 export const generatePRD = async (
@@ -126,6 +128,85 @@ export const generateProjectDescription = async (
     throw new ApiError(
       500,
       `Failed to generate project description: ${error instanceof Error ? error.message : 'Unknown error'}`
+    );
+  }
+};
+
+export const generateTaskDescription = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const input = req.body as TaskDescriptionInput;
+
+  // Validate required fields
+  if (!input.responseType) {
+    throw new ApiError(
+      400,
+      'responseType is required (must be "simple" or "detailed")'
+    );
+  }
+
+  if (input.responseType !== 'simple' && input.responseType !== 'detailed') {
+    throw new ApiError(
+      400,
+      'responseType must be either "simple" or "detailed"'
+    );
+  }
+
+  if (!input.taskTitle) {
+    throw new ApiError(400, 'taskTitle is required');
+  }
+
+  if (!input.briefDescription) {
+    throw new ApiError(400, 'briefDescription is required');
+  }
+
+  if (!input.projectContext) {
+    throw new ApiError(400, 'projectContext is required');
+  }
+
+  const provider =
+    (input.provider?.toLowerCase() as AIProvider) ?? AIProvider.GROQ;
+
+  // Validate provider
+  const supportedProviders =
+    TaskDescriptionGeneratorService.getSupportedProviders();
+  if (!supportedProviders.includes(provider)) {
+    const providerInfo = supportedProviders
+      .map((p) => {
+        const info = TaskDescriptionGeneratorService.getProviderInfo(p);
+        return `${p} (${info.speed}, ${info.reliability})`;
+      })
+      .join(', ');
+    throw new ApiError(
+      400,
+      `Invalid provider. Supported providers: ${providerInfo}`
+    );
+  }
+
+  try {
+    logger.info(
+      `Generating task description with ${provider} (${input.responseType} mode)`
+    );
+
+    const result = await TaskDescriptionGeneratorService.generate(
+      input,
+      provider
+    );
+
+    res.json({
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    logger.error('Task description generation failed', {
+      error,
+      provider,
+      responseType: input.responseType,
+    });
+    throw new ApiError(
+      500,
+      `Failed to generate task description: ${error instanceof Error ? error.message : 'Unknown error'}`
     );
   }
 };

@@ -148,3 +148,59 @@ export interface ProjectDescriptionResponse {
   generatedFrom: 'simple_prompt' | 'structured_input' | 'hybrid';
   timestamp: string;
 }
+
+export interface TaskDescriptionInput {
+  responseType: 'simple' | 'detailed';
+  taskTitle: string;
+  briefDescription: string;
+  projectContext: string;
+
+  // Optional for both modes
+  taskType?: string;
+  priority?: string;
+
+  // Optional for detailed mode only
+  projectDescription?: string;
+  estimatedEffort?: string;
+  technicalRequirements?: {
+    techStack?: string[];
+    frameworks?: string[];
+    apis?: string[];
+  };
+  acceptanceCriteria?: string[];
+  dependencies?: string[];
+  constraints?: string;
+
+  // Common
+  provider?: string;
+}
+
+export interface TaskDescriptionSimpleResponse {
+  taskDescription: string;
+  responseType: 'simple';
+  provider: AIProvider;
+  model: string;
+  timestamp: string;
+}
+
+export interface TaskDescriptionDetailedData {
+  overview: string;
+  detailedDescription: string;
+  technicalSteps: string[];
+  acceptanceCriteria: string[];
+  testingRequirements: string[];
+  dependencies: string[];
+  deliverables: string[];
+  risks: string[];
+  estimatedEffort?: string;
+  notes?: string;
+  userStory?: string;
+}
+
+export interface TaskDescriptionDetailedResponse {
+  taskDescription: TaskDescriptionDetailedData;
+  responseType: 'detailed';
+  provider: AIProvider;
+  model: string;
+  timestamp: string;
+}
